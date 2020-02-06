@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Web ML</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+
+
+  <nav class="navbar navbar-expand-xl navbar-dark text-white " style="background-color: #1A7D81 ;">
+
+    <a class="navbar-brand" style="font-size:170%; ">ML WebService</a>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- <a class="navbar-brand" href="profile.php?name=$name_us"><i class="fas fa-user-circle"></i>Profile</a> -->
+    <!-- <a class="navbar-brand" href="logout.php"><i class="fas fa-sign-out-alt"></i>Logout</a> -->
+
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+      <ul class="navbar-nav mr-auto">
+        <!--<li class ="nav-item active" >
+              <a class="nav-link text-white" href=""><i class="fas fa-sign-out-alt"></i><span class = "navbar-text" >Reindirizza a sito 1</span></a>
+            </li>-->
+        <li class="nav-item active">
+          <a class="nav-link text-white" href="http://www.exact-lab.it"><i class="fas fa-home"></i><span class="navbar-text"> eXact</span></a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+</head>
+<!--
+<script>
+function myFunction() {
+var case1= $('#caso1').val();
+var case2= $('#caso2').val();
+var case3= $('#caso3').val();
+var caso4= $('#caso4').val();
+var caso5= $('#caso5').val();
+var caso6= $('#caso6').val();
+var caso7= $('#caso7').val();
+var caso8= $('#caso8').val();
+var caso9= $('#caso9').val();
+var caso10= $('#caso10').val();
+var caso12= $('#caso12').val();
+var caso13= $('#caso13').val();
+var caso14= $('#caso14').val();
+
+  $.ajax({
+              url: "/join",
+              type: "POST",
+              data: {caso1:caso1,
+                     caso2:caso2,
+                     caso3:caso3,
+                     caso4:caso4}
+          }).done(function(response) {
+            var html= "";
+            response =response.result;
+                 $.each(response,function(key,val){
+                 console.log(val);
+                    html+="<p>"+val+"<p>"
+                });
+                html +="<br>";
+                $(".show-data").append(html);
+            });
+};
+  </script>
+-->
+
+<body>
+  <div class="container mt-2">
+
+  <div class="row justify-content-center">
+    <h2>Seleziona un caso</h2>
+  </div>
+</div>
+  <div class="container mt-2" style="display: flex;  flex-direction: column-reverse;">
+
+      <div class="row">
+
+      <div class="col">
+
+                <table class="table">
+                  <tbody>
+                    <form method="post" style="align:center;">
+                      <tr>
+                        <td>
+                          <input type="radio" name="caso" value="1"><label style="font-size: 120%; display:inline;"> Bias Exhaustive</label></br>
+                          <input type="radio" name="caso" value="2"><label style=" font-size: 120%;display:inline;"> Bias not Informative Features</label></br>
+                          <input type="radio" name="caso" value="3"><label style=" font-size: 120%;display:inline;"> Bias Informative Features</label></br>
+                          <input type="radio" name="caso" value="4"><label style="font-size: 120%; display:inline;"> Undersampling</label></br>
+                          <input type="radio" name="caso" value="5"><label style=" font-size: 120%;display:inline;"> Swap</label></br>
+                        </td>
+                        <td>
+                          <input type="radio" name="caso" value="6"><label style=" font-size: 120%;display:inline;"> Swap 1 Labels</label></br>
+                          <input type="radio" name="caso" value="7"><label style=" font-size: 120%;display:inline;"> L1 L2</label></br>
+                          <input type="radio" name="caso" value="8"><label style=" font-size: 120%;display:inline;"> L1 L2 Noise</label></br>
+                          <input type="radio" name="caso" value="9"><label style=" font-size: 120%;display:inline;"> Increase non Info</label></br>
+                          <input type="radio" name="caso" value="10"><label style=" font-size: 120%;display:inline;"> Increase non Info and Hide</label></br>
+                        </td>
+                        <td>
+                          <input type="radio" name="caso" value="12"><label style=" font-size: 120%;display:inline;"> Hidden non Exhaustive non Sequential</label></br>
+                          <input type="radio" name="caso" value="13"><label style=" font-size: 120%;display:inline;"> Hidden Sequential</label></br>
+                          <input type="radio" name="caso" value="14"><label style=" font-size: 120%;display:inline;"> Hidden not Sequential</label></br>
+                        </td>
+                      </tr>
+
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+<div class= "container mt-3">
+ <div class="row justify-content-center">
+  <input type="submit"  class="btn btn-outline-success"></input>
+</div>
+</div>
+
+
+  <div class="row mt-5">
+<div class="col">
+</div>
+    <div class="col-8">
+      <img style="width:120%;height:100%;" src="{{src}}" class="img-fluid">
+    </div>
+<div class="col">
+</div>
+
+  </div>
+
+
+
+
+
+  <div class="footer-copyright text-center mt-4 py-3">
+    <div class="footer-copyright text-center py-3">© 2020 Copyright:
+      <a href="#"><i class="fas fa-envelope-open-text"></i>Marco Franzon</a>
+    </div>
+  </div>
+
+
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+
+
+</body>
+
+</html>
